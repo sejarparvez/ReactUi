@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply text-black overflow-x-hidden;
+}
+
+.Green_bg {
+  @apply h-[100rem] w-8 absolute -z-10 -rotate-45 blur-3xl;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 255, 0, 0.8),
+    rgba(0, 255, 0, 0)
+  );
+}
+
+.Blue_bg,
+.Pink_bg {
+  @apply h-[100rem] w-8 absolute -z-10 -rotate-45 blur-3xl;
+}
+
+.Blue_bg {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 183, 255, 0.8),
+    rgba(0, 183, 255, 0)
+  );
+}
+
+.Pink_bg {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 105, 180, 0.8),
+    rgba(255, 105, 180, 0)
+  );
+}
+.Purple_bg {
+  @apply h-[100rem] w-8 absolute -z-10 -rotate-45 blur-3xl;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(128, 0, 128, 0.8),
+    rgba(128, 0, 128, 0)
+  );
+}
+
+.line {
+  background: linear-gradient(to right, transparent, #808080, transparent);
+  height: 1px;
+}
