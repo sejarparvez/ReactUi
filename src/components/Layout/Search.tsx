@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import { FiSearch } from "react-icons/fi";
@@ -7,6 +8,7 @@ const Search: React.FC = () => {
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
+  const [shouldFocusInput, setShouldFocusInput] = useState<boolean>(false);
 
   const debounce = (func: Function, delay: number) => {
     let timer: NodeJS.Timeout;
@@ -27,7 +29,7 @@ const Search: React.FC = () => {
       setSearchResults([]);
     } else {
       const results = dummySearchQuery.filter((item) =>
-        item.name.toLowerCase().includes(searchQuery.toLowerCase())
+        item.name.toLowerCase().includes(searchQuery.toLowerCase()),
       );
       setSearchResults(results);
     }
@@ -71,12 +73,15 @@ const Search: React.FC = () => {
   }, [searchQuery, debouncedSearch]);
 
   useEffect(() => {
+    if (shouldFocusInput && searchInputRef.current) {
+      searchInputRef.current.focus();
+      setShouldFocusInput(false);
+    }
+  }, [shouldFocusInput]);
+
+  useEffect(() => {
     if (isSearchOpen) {
-      setTimeout(() => {
-        if (searchInputRef.current) {
-          searchInputRef.current.focus();
-        }
-      }, 0);
+      setShouldFocusInput(true);
     }
   }, [isSearchOpen]);
 
@@ -84,21 +89,21 @@ const Search: React.FC = () => {
     <div className="relative ">
       <button
         onClick={handleSearchClick}
-        className="rounded-full p-2 focus:outline-none transition-opacity duration-300 ease-in-out hover:opacity-75"
+        className="rounded-full p-2 transition-opacity duration-300 ease-in-out hover:opacity-75 focus:outline-none"
       >
         <FiSearch size={24} />
       </button>
       {isSearchOpen && (
-        <div className="fixed inset-0 flex items-start justify-center backdrop-filter backdrop-blur-sm bg-opacity-70 bg-black pt-5rem transition-opacity duration-300 ease-in-out z-50">
-          <div className="bg-white rounded-lg p-4 mt-20 z-40 relative w-full md:w-[30rem]">
+        <div className="pt-5rem fixed inset-0 z-50 flex items-start justify-center bg-black bg-opacity-70 backdrop-blur-sm backdrop-filter transition-opacity duration-300 ease-in-out">
+          <div className="relative z-40 mt-20 w-full rounded-lg bg-white p-4 md:w-[30rem]">
             <div className="relative">
               <input
+                ref={searchInputRef} // Add the ref to the input element
                 id="search-input"
-                ref={searchInputRef}
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="border rounded px-2 py-1 w-full outline-none focus:border-cyan focus:border-2"
+                className="w-full rounded border px-2 py-1 outline-none focus:border-2 focus:border-cyan"
                 placeholder="Search"
               />
               <div className="absolute right-2 top-2">
@@ -118,7 +123,7 @@ const Search: React.FC = () => {
                         onClick={handleLinkClick}
                         className="block py-2 px-4 transition-colors duration-200 ease-in-out hover:bg-gray-100"
                       >
-                        <div className="flex justify-between items-center">
+                        <div className="flex items-center justify-between">
                           <div className="mr-4">{result.name}</div>
                           <div className="text-gray-500">{result.link}</div>
                         </div>

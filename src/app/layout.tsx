@@ -1,5 +1,5 @@
-import Footer from "@/components/footer/Footer";
-import Navbar from "@/components/navbar/Navbar";
+import Footer from "@/components/Layout/Footer";
+import Navbar from "@/components/Layout/Navbar";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -20,9 +20,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar />
-        <div className="min-h-screen px-10 py-10">{children}</div>
-        <Footer />
+        <div className="overflow-x-hidden">
+          <Navbar />
+          <div className="min-h-screen px-6 py-10">{children}</div>
+          <Footer />
+        </div>
       </body>
     </html>
   );
