@@ -14,7 +14,7 @@ export default function ProductionHeader() {
       <div className="flex flex-col gap-2 overflow-auto pb-3">
         <div className="flex mr-16 gap-10 [&>*]:flex [&>*]:w-full [&>*]:pt-10">
           <div
-            className={`flex-col border-t-[2px] ${
+            className={`flex-col border-t-[2px]${
               activeSection === "primer"
                 ? "border-indigo-600"
                 : "border-slate-200 hover:border-slate-400"

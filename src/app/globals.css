@@ -48,3 +48,7 @@ body {
   background: linear-gradient(to right, transparent, #808080, transparent);
   height: 1px;
 }
+
+.blur {
+  filter: blur(1.5px);
+}

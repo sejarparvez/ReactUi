@@ -22,7 +22,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <div className="overflow-x-hidden">
           <Navbar />
-          <div className="min-h-screen px-6 py-10">{children}</div>
+          <div className="min-h-screen px-3 sm:px-4 md:px-6 py-10">
+            {children}
+          </div>
           <Footer />
         </div>
       </body>
