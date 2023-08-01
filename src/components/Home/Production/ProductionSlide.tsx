@@ -18,7 +18,7 @@ const ProductionSlide = () => {
         allowTouchMove={false}
         slidesPerView={1.1}
       >
-        <div className="absolute -top-0 z-50  mx-12 flex h-full w-screen justify-center">
+        <div className="absolute -top-0 z-50  flex h-full  justify-center">
           <ProductionHeader />
         </div>
         <SwiperSlide>

@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { FaUikit } from "react-icons/fa";
@@ -12,7 +13,7 @@ export default function Menu() {
   };
 
   return (
-    <div className="lg:hidden">
+    <div className="lg:hidden relative">
       <div
         className={`z-40 flex flex-col gap-1 p-3 duration-300 ${
           NavOpen ? "rotate-[360deg]" : ""
@@ -48,16 +49,25 @@ export default function Menu() {
             </div>
             <hr />
             <div className="my-4 flex flex-col gap-4 px-8">
-              <span>Components</span>
-              <span>Templates</span>
-              <span>Documentation</span>
+              <Link href={"/components"}>Components</Link>
+              <Link href={"/templates"}>Templates</Link>
+              <Link href={"/documentation"}>Documentation</Link>
             </div>
             <hr />
             <div className="my-4 px-8">Sign in</div>
-            <button className="flex gap-1  bg-black text">
-              <span>Get all-access</span>
-              <FiArrowRight />
-            </button>
+            <div className="flex flex-wrap gap-6">
+              <button className="flex gap-1 mx-8 text-white px-6 py-2 rounded-lg items-center bg-black">
+                <span>Get all-access</span>
+                <FiArrowRight />
+              </button>
+              <Link
+                href={"/documentation"}
+                className="flex gap-1 bg-slate-100 mx-8 border px-6 py-2 rounded-lg items-center"
+              >
+                <span>Documentation</span>
+                <FiArrowRight />
+              </Link>
+            </div>
           </div>
         </div>
       </div>

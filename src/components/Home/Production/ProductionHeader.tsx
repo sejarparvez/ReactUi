@@ -9,12 +9,12 @@ export default function ProductionHeader() {
   const [activeSection, setActiveSection] = useState<Section>("primer");
 
   return (
-    <div className="relative w-full">
-      <div className="absolute top-0 -z-10 h-[1.5px] w-11/12 bg-slate-200"></div>
-      <div className="flex flex-col gap-2 overflow-auto pb-3">
-        <div className="flex mr-16 gap-10 [&>*]:flex [&>*]:w-full [&>*]:pt-10">
+    <div className="relative">
+      <div className="absolute top-0 -z-10 h-[1.5px] left-6 w-11/12 bg-slate-200"></div>
+      <div className="flex flex-col gap-2 overflow-scroll pb-3 md:w-full w-screen  md:pr-8 pl-8 pr-44">
+        <div className="flex justify-between gap-6 [&>*]:cursor-pointer [&>*]:pt-10">
           <div
-            className={`flex-col border-t-[2px]${
+            className={`flex-col border-t-[2px] ${
               activeSection === "primer"
                 ? "border-indigo-600"
                 : "border-slate-200 hover:border-slate-400"
@@ -147,7 +147,7 @@ export default function ProductionHeader() {
           </div>
         </div>
       </div>
-      <div className="px-4 pt-4 lg:hidden">
+      <div className=" w-screen mx-auto pl-8 pr-6 pt-10 lg:hidden">
         <div
           className={`text-sm text-gray-600 ${
             activeSection === "primer" ? "block" : "hidden"
