@@ -47,6 +47,9 @@ const Navbar: React.FC = () => {
           <Search />
           <Menu />
         </div>
+        <div className="Blue_bg absolute -top-60 right-0"></div>
+        <div className="Pink_bg absolute -top-40 right-44"></div>
+        <div className="Blue_bg absolute -top-0 right-[40rem]"></div>
       </div>
 
       <hr className="mx-auto w-[96%]" />
