@@ -3,9 +3,12 @@ import { Switch } from "@/components/ui/switch";
 import HeroAlert from "./HeroAlert";
 import HeroBookmark from "./HeroBookmark";
 import HeroCalendar from "./HeroCalendar";
+import { HeroCommand } from "./HeroCommand";
 import HeroLeft from "./HeroLeft";
 import HeroMusic from "./HeroMusic";
+import HeroNev from "./HeroNev";
 import { HeroNotification } from "./HeroNotification";
+import { HeroTabs } from "./HeroTabs";
 import HeroToggle from "./HeroToggle";
 
 export default function Hero() {
@@ -39,6 +42,15 @@ export default function Hero() {
         </div>
         <div className="absolute right-0 top-[30rem]">
           <HeroNotification />
+        </div>
+        <div className="absolute right-[26rem] top-[30rem]">
+          <HeroTabs />
+        </div>
+        <div className="absolute w-full right-[53rem] top-[38rem]">
+          <HeroCommand />
+        </div>
+        <div className="absolute w-full right-[45.5rem] top-[30rem]">
+          <HeroNev />
         </div>
       </div>
     </div>
