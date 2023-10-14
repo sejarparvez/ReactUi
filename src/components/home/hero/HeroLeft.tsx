@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import { FiArrowRight } from "react-icons/fi";
 
 export default function HeroLeft() {
@@ -13,13 +14,13 @@ export default function HeroLeft() {
       </div>
 
       <div className="mt-10 flex flex-col gap-5 md:flex-row md:gap-8">
-        <button className="flex items-center justify-center rounded-md bg-black px-3 py-2 font-medium text-white">
+        <Button size="lg">
           Browse components
           <FiArrowRight />
-        </button>
-        <button className="flex items-center justify-center rounded-md border-2 px-3 py-2 font-medium">
+        </Button>
+        <Button size="lg" variant="outline">
           Explore templates <FiArrowRight />
-        </button>
+        </Button>
       </div>
     </div>
   );

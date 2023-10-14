@@ -37,7 +37,7 @@ const Navbar: React.FC = () => {
               Sign In
             </Link>
           </Button>
-          <Button>
+          <Button size='lg'>
             <Link href="/premium" className="flex items-center gap-1">
               Get full access <BsArrowRightShort size={25} />
             </Link>

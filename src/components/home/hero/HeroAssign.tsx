@@ -1,30 +1,63 @@
-import HeroToggle from "./HeroToggle";
-import HeroToggleTwo from "./HeroToggleTwo";
+"use client";
+import { useState } from "react";
+import { PiCaretUpDown } from "react-icons/pi";
 
-export default function HeroAccount() {
+export default function HeroAssign() {
+  const [hoveredItem, setHoveredItem] = useState(0);
+  const handleItemHover = (index: React.SetStateAction<number>) => {
+    setHoveredItem(index);
+  };
+
   return (
-    <div className="bg-white p-4 border rounded-lg shadow-xl text-sm w-[28rem]">
-      <div>
-        <div>Account</div>
-        <div className="text-gray-600 mt-3">
-          Manage how information is displayed in your account.
+    <div className="flex text-sm flex-col gap-2 w-[27rem] bg-white shadow-2xl p-4">
+      <div>Assigned to</div>
+      <div className="flex items-center justify-between border rounded-md p-2">
+        <div>Tom Cook</div>
+        <div>
+          <PiCaretUpDown />
         </div>
       </div>
-      <div className="flex items-center justify-between mt-4 border-y py-4">
-        <div>Language</div>
-        <div>English</div>
-      </div>
-      <div className="flex items-center justify-between border-b py-4">
-        <div>Automatic timezone</div>
-        <div className=" scale-75">
-          <HeroToggle />
-        </div>
-      </div>
-      <div className="flex items-center justify-between pt-4">
-        <div>Auto-update applicant data</div>
-        <div className="scale-75">
-          <HeroToggleTwo />
-        </div>
+      <div className="flex flex-col [&>*]:p-2 hover:[&>*]:bg-indigo-600 border rounded-md">
+        <span
+          onMouseEnter={() => handleItemHover(1)}
+          className={`${
+            hoveredItem === 1
+              ? "bg-indigo-600 text-white"
+              : "text-gray-600 hover:bg-indigo-600 hover:text-white"
+          }`}
+        >
+          Wade Cooper
+        </span>
+        <span
+          onMouseEnter={() => handleItemHover(2)}
+          className={`${
+            hoveredItem === 2
+              ? "bg-indigo-600 text-white"
+              : "text-gray-600 hover:bg-indigo-600 hover:text-white"
+          }`}
+        >
+          Mat Henry
+        </span>
+        <span
+          onMouseEnter={() => handleItemHover(0)}
+          className={`${
+            hoveredItem === 0
+              ? "bg-indigo-600 text-white"
+              : "text-gray-600 hover:bg-indigo-600 hover:text-white"
+          }`}
+        >
+          Tom Cook
+        </span>
+        <span
+          onMouseEnter={() => handleItemHover(3)}
+          className={`${
+            hoveredItem === 3
+              ? "bg-indigo-600 text-white"
+              : "text-gray-600 hover:bg-indigo-600 hover:text-white"
+          }`}
+        >
+          Nathan Aka
+        </span>
       </div>
     </div>
   );

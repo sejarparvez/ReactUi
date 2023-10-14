@@ -1,3 +1,4 @@
+import { Slider } from "@/components/ui/slider";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { HiPlay } from "react-icons/hi";
 import { PiSpeakerSimpleLowFill } from "react-icons/pi";
@@ -12,11 +13,12 @@ export default function HeroMusic() {
         <TbRewindForward15 size={23} color="gray" />
       </div>
       <div className="flex items-center gap-6 px-6">
-        <div>02:17</div>
-        <div className="relative h-2 w-32 rounded-full bg-gray-300 md:w-56">
-          <div className="h-2 w-20 rounded-l-full bg-indigo-600 md:w-32"></div>
-          <div className="absolute left-[5rem] -top-1.5 h-5 w-[0.3rem] rounded-3xl bg-indigo-600 md:left-[8.1rem]"></div>
+        <div>01:17</div>
+
+        <div className="w-80">
+          <Slider defaultValue={[33]} max={100} step={1} />
         </div>
+
         <div>04:13</div>
       </div>
       <div className="flex gap-8 pr-6">
