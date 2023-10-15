@@ -13,7 +13,7 @@ import HeroToggle from "./HeroToggle";
 
 export default function Hero() {
   return (
-    <div className="grid grid-cols-3 w-full">
+    <div className="grid grid-cols-3 w-full mb-[40rem]">
       <div className=" col-span-2 mt-20">
         <HeroLeft />
       </div>
