@@ -4,7 +4,7 @@ import { FiArrowRight } from "react-icons/fi";
 export default function HeroLeft() {
   return (
     <div>
-      <div className="text-4xl font-bold leading-snug md:pr-48 md:text-6xl">
+      <div className="text-4xl font-bold leading-snug md:pr-48">
         Craft your React masterpiece today!
       </div>
       <div className="mt-4 text-lg text-gray-800 md:pr-48">

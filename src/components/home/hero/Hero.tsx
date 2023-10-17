@@ -13,43 +13,43 @@ import HeroToggle from "./HeroToggle";
 
 export default function Hero() {
   return (
-    <div className="grid grid-cols-3 w-full mb-[40rem]">
-      <div className=" col-span-2 mt-20">
+    <div className="grid grid-cols-1 md:grid-cols-3 w-full mb-[33rem] lg:mb-[44rem]">
+      <div className=" col-span-2 md:mt-6 lg:mt-20">
         <HeroLeft />
       </div>
 
       <div className="col-span-1 relative">
-        <div className="absolute right-0 bg-white">
+        <div className="md:absolute mt-6 md:mt-0  lg:right-0 bg-white scale-100 md:scale-75 lg:scale-100">
           <HeroCalendar />
         </div>
-        <div className="absolute right-[21rem] top-16">
+        <div className="hidden md:block md:absolute md:right-60 lg:right-[21rem] top-16">
           <HeroToggle />
         </div>
-        <div className="absolute right-[28rem] top-32">
+        <div className="hidden md:block md:absolute md:right-[21rem] lg:right-[28rem] top-32">
           <Switch />
         </div>
-        <div className="absolute top-28 right-[21rem]">
+        <div className="hidden md:block md:absolute top-28 md:right-60 lg:right-[21rem]">
           <Button>Button</Button>
         </div>
-        <div className="absolute top-36 right-[21rem]">
+        <div className="hidden md:block md:absolute top-36 md:right-[14rem] scale-90 lg:scale-100 lg:right-[21rem]">
           <HeroBookmark />
         </div>
-        <div className="absolute right-[21rem] top-[15.4rem] w-[17rem]">
+        <div className="hidden md:block md:absolute md:right-[14rem] lg:right-[21rem] top-[15.4rem] md:w-[14rem] lg:w-[17rem]">
           <HeroAlert />
         </div>
-        <div className="absolute right-0 top-[22rem]">
+        <div className="hidden md:block md:absolute -right-12 md:scale-90 lg:scale-100 md:top-[28rem] lg:top-[22rem]">
           <HeroMusic />
         </div>
-        <div className="absolute right-0 top-[30rem]">
+        <div className="absolute -right-5 md:-right-16 lg:right-0 scale-90 md:scale-75 lg:scale-100 top-[24rem] md:top-[31rem] lg:top-[30rem]">
           <HeroNotification />
         </div>
-        <div className="absolute right-[26rem] top-[30rem]">
+        <div className="hidden md:block md:absolute scale-75 lg:scale-100 right-60 lg:right-[26rem] top-[31rem] lg:top-[30rem]">
           <HeroTabs />
         </div>
-        <div className="absolute w-full right-[53rem] top-[38rem]">
+        <div className="hidden lg:block lg:absolute w-full lg:right-[53rem] top-[38rem]">
           <HeroCommand />
         </div>
-        <div className="absolute w-full right-[45.5rem] top-[30rem]">
+        <div className="lg:absolute lg:block hidden w-full right-[45.5rem] top-[30rem]">
           <HeroNev />
         </div>
       </div>
