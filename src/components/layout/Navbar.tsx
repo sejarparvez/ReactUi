@@ -13,7 +13,7 @@ const Navbar: React.FC = () => {
           <FaUikit color="#0eafe9" />
           ReactUi
         </a>
-        <div className="hidden items-center gap-10  lg:flex">
+        <div className="hidden items-center gap-6  lg:flex">
           <Button variant="ghost">
             <Link href="/components" className="font-semibold">
               Components
