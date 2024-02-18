@@ -13,7 +13,7 @@ const Navbar: React.FC = () => {
           <FaUikit color="#0eafe9" />
           ReactUi
         </a>
-        <div className="hidden items-center gap-6  lg:flex">
+        <div className="hidden items-center gap-6 lg:flex">
           <Button variant="ghost">
             <Link href="/components" className="font-semibold">
               Components
@@ -37,7 +37,7 @@ const Navbar: React.FC = () => {
               Sign In
             </Link>
           </Button>
-          <Button size='lg'>
+          <Button size="lg">
             <Link href="/premium" className="flex items-center gap-1">
               Get full access <BsArrowRightShort size={25} />
             </Link>
