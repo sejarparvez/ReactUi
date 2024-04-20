@@ -16,6 +16,7 @@ export default function Hero() {
     <div className="grid grid-cols-1 md:grid-cols-3 w-full mb-[33rem] lg:mb-[44rem]">
       <div className=" col-span-2 md:mt-6 lg:mt-20">
         <HeroLeft />
+        {/* test comment */}
       </div>
 
       <div className="col-span-1 relative">
